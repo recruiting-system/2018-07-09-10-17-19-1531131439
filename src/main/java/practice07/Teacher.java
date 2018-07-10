@@ -22,7 +22,7 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         String temString = " I teach No Class.";
-        if(klass.getNumber()!=0){
+        if(klass!=null&&klass.getNumber()!=0){
             temString = " I teach Class "+klass.getNumber()+".";
         }
         return super.introduce()+" I am a Teacher." +temString;

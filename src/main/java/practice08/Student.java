@@ -20,11 +20,10 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        if (klass != klass.getLeader().getKlass()) {
-            return super.introduce()+" I am a Student. I am Leader of Class "+klass.getNumber()+".";
-        } else {
-            return "";
+        String tempString = "at Class "+klass.getNumber();
+        if (klass.getLeader()!= null && klass == klass.getLeader().getKlass()) {
+            tempString = "Leader of Class "+klass.getNumber();
         }
-
+        return super.introduce()+" I am a Student. I am "+tempString+".";
     }
 }
